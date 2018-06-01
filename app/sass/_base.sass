@@ -1,0 +1,739 @@
+$output-bourbon-deprecation-warnings: false;
+@import "bourbon"
+@import "vars"
+@import "functions"
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=cyrillic')
+
+*::-webkit-input-placeholder
+	color: #000
+	opacity: .55
+
+*:-moz-placeholder
+	color: #000
+	opacity: .55
+
+*::-moz-placeholder
+	color: #000
+	opacity: .55
+
+*:-ms-input-placeholder
+	color: #000
+	opacity: .55
+
+html
+	font-size: 100%
+
+input, a, button, textarea, select
+	outline: none
+
+#{$all-text-inputs}, select, input[type="submit"], button
+	-webkit-appearance: none
+	appearance: none
+
+*, *:after, *:before
+	box-sizing: border-box
+
+*[v-cloak]
+	display: none
+
+.loader
+	position: fixed
+	background: #fff
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 20
+	display: flex
+	align-items: center
+	justify-content: center
+	will-change: opacity
+	transform-style: preserve-3d
+	-webkit-perspective: 400px
+	perspective: 400px
+
+	&__left, &__right
+		will-change: transform
+		// overflow: hidden
+
+	&__left
+		transform-origin: right
+
+	&__right
+		transform-origin: left
+
+
+.loader-img
+	$width: 200px
+	$rotate: 45deg
+	// -webkit-perspective: 1px
+	// perspective: 1px
+	transform: scale3d(.01, 1, 1)
+	will-change: transform
+	transition-delay: .5s  !important
+
+	&__cont
+		will-change: transform
+		transform: scale3d(1, .005, 1)
+
+	$triangle-side: $width - 59px
+
+	position: relative
+
+	&__left, &__right
+		position: absolute
+		+size($triangle-side $width - 129px)
+		top: -60px
+		z-index: 1
+		transform-style: preserve-3d
+		-webkit-perspective: 400px
+		perspective: 400px
+
+		i
+			display: block
+			+size(100%)
+			background: currentColor
+			transform-origin: bottom
+			will-change: transform
+			transform: rotate3d(1, 0, 0, -180deg)
+
+			&:before
+				content: ""
+				position: absolute
+				bottom: 100%
+				left: 0
+
+	&__center
+		position: relative
+		+size($width/2)
+		color: #e8470a
+		background: currentColor
+
+		&:before, &:after, i
+			position: absolute
+
+		i
+			bottom: 100%
+			left: 0
+			+triangle($width/2 $width/4, currentColor, up)
+
+		&:before, &:after
+			content: ""
+			top: 0
+
+		&:before
+			right: 100%
+			+triangle($width/2 $width/4, #f59201, left)
+
+		&:after
+			left: 100%
+			+triangle($width/2 $width/4, $main-color, right)
+
+	&__left
+		color: #f59201
+		left: -95px
+		transform: rotate3d(0, 0, 1, -$rotate)
+
+		i
+			transition-delay: 1.5s !important
+
+			&:before
+				+triangle($triangle-side, currentColor, up)
+
+	&__right
+		color: $main-color
+		right: -95px
+		transform: rotate3d(0, 0, 1, $rotate)
+
+		i
+			transition-delay: 1s !important
+
+			&:before
+				+triangle($triangle-side, currentColor, up)
+
+%clear-text
+	overflow: hidden
+	text-indent: -9999px
+
+%clearfix
+	
+	&:after
+		display: table
+		clear: both
+		content: ""
+
+address
+	font-weight: inherit
+
+#googlemap
+	height: 100% !important
+
+body
+	min-width: 320px
+	line-height: 1.2
+	font-family: $default-font
+	font-weight: 300
+	font-size: rem(16)
+	background: #fff
+	color: #000
+	position: relative
+	// max-width: 1920px
+	// margin: 0 auto
+
+	&.page_buy
+		height: 100vh
+
+		#page-wr, #content
+			height: 100%
+
+		.content
+			flex: 1 1 auto
+
+	&[class*="page-buy"], &[class*="page-services"]
+
+		.head
+			position: static
+
+	&.js__kart-opened
+
+		.sort
+
+			&__filter
+				// display: block
+
+	&.main
+
+		.logo
+
+			svg
+
+			.fil2
+				// fill: #fff
+
+	&.inner
+		background: #f6f6f6
+
+		.head__logo
+			display: flex !important
+			align-items: center
+			justify-content: center
+			padding: 0 24px
+
+		.city
+
+			.selectize
+
+				&-input
+					color: #000
+
+					.item
+
+						&:after
+							background: url("../img/ico-select-arrow.svg") center right 13px no-repeat, rgb(255, 255, 255) !important
+
+	// &:after
+	// 	position: fixed
+	// 	content: ""
+	// 	top: 0
+	// 	left: 0
+	// 	+size(100%)
+	// 	background: url("../img/loading.gif") center no-repeat, #fff
+	// 	z-index: 9999
+	// 	transition: opacity .5s ease
+
+	&.loaded
+
+		// &:after
+		// 	opacity: 0
+		// 	pointer-events: none
+
+		// .first-screen
+
+		// 	&__bg
+		// 		animation: showBg 2s forwards
+
+		// 	&__title
+		// 		animation: showTitle 1s forwards
+
+		// 	&__cloud
+		// 		animation: showClouds 2s forwards
+
+		.loader
+			transition: opacity .5s ease
+			transition-delay: 2.7s
+			opacity: 0
+			pointer-events: none
+
+			&-img
+				transition: transform .5s ease
+				transform: scale3d(1,1,1)
+
+				&__cont
+					transition: transform .5s ease
+					transform: scale3d(1,1,1)
+
+				&__left, &__right
+
+					i
+						transition: transform 1s ease
+						transform: rotate3d(1, 0, 0, 0deg)
+
+#content, .content
+	flex: 1 0 auto
+	display: flex
+	flex-direction: column
+
+.head
+	flex: none
+
+#page-wr
+	//max-width: 1920px
+	margin: 0 auto
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+	select
+		-webkit-appearance: none;
+		/* for FF */
+		-moz-appearance: none;
+		text-indent: 0.01px; 
+		text-overflow: '';
+		/* for IE */
+		-ms-appearance: none;
+		appearance: none!important;
+
+		&::-ms-expand 
+			display: none;
+
+a
+	color: $main-color
+	text-decoration: underline
+	font-weight: inherit
+
+	&[href^="tel"], &[href^="mail"]
+		white-space: nowrap
+
+	&:not([class])
+		border-bottom: 1px solid transparent
+
+		&:hover, &:focus
+			color: $main-color
+			border-color: $main-color
+
+.wrapper
+	max-width: $base-width + px
+	padding: 0 2rem
+	margin: 0 auto
+	box-sizing: content-box
+
+input[type="submit"], button
+	cursor: pointer
+
+img
+	max-width: 100%
+
+li
+	list-style: none
+
+.soc
+	
+	&__link
+		display: inline-block
+		border-radius: 50%
+		+size(42px)
+		background: 
+			position: center
+			repeat: no-repeat
+			color: #4b4b4b
+
+		&:not(:last-child)
+			margin-right: 9px
+
+.table-wrap
+	overflow: auto
+
+%text-page, .text-page
+
+	> *:not(:first-child)
+		margin-top: 20px
+
+	strong
+		font-weight: bold
+
+	h2, h3, h4, h5, h6
+		font-weight: 400
+
+	h2
+		font-size: rem(22)
+		line-height: rem(28)
+
+	h3
+		font-size: rem(19)
+		line-height: rem(26)
+
+	h4, h5
+		line-height: rem(24)
+		font-size: rem(16)
+
+	img[align="right"]
+		float: right
+		margin-left: 20px
+
+	img[align="left"]
+		float: left
+		margin-right: 20px
+
+	blockquote
+		border-left: 2px solid $main-color
+		padding-left: 21px
+
+		&.bg
+			border: none
+			padding: 22px 30px
+			background: #f5f6f8
+
+		&.border
+			font-weight: 400
+			font-size: rem(22)
+			line-height: lh(26, 22)
+			padding: 25px 0
+			border:
+				top: 1px solid $border-color
+				bottom: 1px solid $border-color
+				left: none
+
+	table
+		// width: 100%
+		// table-layout: fixed
+		color: #000
+
+		td, th
+			padding: 15px 23px
+			font-weight: 300
+			vertical-align: middle
+
+	table[border="1"]
+
+		td, th
+			border: 1px solid $border-color
+
+	ul, ol
+		max-width: 650px
+		// margin-top: 0 !important
+
+		&[column]
+			column-count: 2
+			column-gap: rem(85)
+			max-width: none
+
+	li
+		//padding-left: 20px
+		position: relative
+		line-height: 1.3
+
+		&:before
+			display: inline-block
+
+		&:not(:first-child)
+			margin-top: 14px
+
+		ul, ol
+			margin-bottom: 20px
+
+		li
+			padding-left: 20px
+
+			&:not(:first-child)
+				margin-top: 0
+
+	ul
+
+		li
+			padding-left: 8px
+
+			&:before
+				content: "-"
+				margin: 0 4px 0 -8px
+	
+	ol
+		counter-reset: i
+
+		li
+			counter-increment: i
+
+			&:before
+				content: counter(i) "."
+				margin-right: 4px
+
+.radio
+	position: relative
+
+	&:hover, .radio__input:focus +
+
+		.radio
+
+			&__label
+				color: $main-color
+
+				&:before
+					border-color: $main-color
+	
+	&__input
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0
+		+size(0)
+
+		&:checked
+
+			+ label
+
+				&:after
+					opacity: 1
+
+	&__label
+		position: relative
+		min-height: 26px
+		display: flex
+		align-items: center
+		cursor: pointer
+		padding-left: 40px
+		user-select: none
+		transition: color .3s ease
+
+		&:before, &:after
+			content: ""
+			position: absolute
+			border-radius: 50%
+
+		&:before
+			top: 0
+			left: 0
+			background: $second-color
+			+size(26px)
+			transition: border-color .3s ease
+		
+		&:after
+			top: 9px
+			left: 9px
+			+size(8px)
+			transition: opacity .3s ease
+			opacity: 0
+			z-index: 1
+			background: $main-color
+
+.checkbox
+	position: relative
+
+	&:hover, .checkbox__input:focus +
+
+		.checkbox
+
+			&__label
+				color: $main-color
+
+				&:before
+					border-color: $main-color
+	
+	&__input
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0
+		+size(0)
+
+		&:checked
+
+			+ label
+				
+				&:after
+					opacity: 1
+
+	&__label
+		position: relative
+		padding-left: 32px
+		cursor: pointer
+		min-height: 18px
+		display: flex
+		align-items: center
+		transition: color .3s ease
+
+		&:before, &:after
+			position: absolute
+			content: ""
+
+		&:before
+			background: #fff
+			+size(18px)
+			left: 0
+			top: 2px
+			top: 0
+			border: 1px solid $border-color
+			transition: border-color .3s ease
+
+		&:after
+			transition: opacity .3s ease
+			+size(11px 6px)
+			left: 4px
+			top: 8px
+			top: 6px
+			background: url("../img/ico-check.svg") no-repeat
+			opacity: 0
+
+.btn
+	background: $main-color
+	text-align: center
+	color: #fff
+	border: none
+	transition: background .5s ease
+	display: inline-block
+	height: auto
+	padding: 21px 26px 23px
+
+	&--gray
+		color: #000
+		background: #f6f6f6
+
+.ui-widget
+	
+	&-content
+		background: $second-color
+
+.ui-slider
+
+	.ui-slider
+
+		&-range
+			background: $main-color
+
+		&-handle
+			border: 1px solid $border-color
+			background: #fff
+			transition: background .3s ease, border-color .3s ease
+			+size(16px)
+
+			&:after
+				background: $main-color
+				border-radius: 50%
+				+size(6px)
+				margin: 0
+				top: calc(50% - 3px)
+				left: calc(50% - 3px)
+
+			&:hover, &:focus
+				background: $main-color
+				border-color: $main-color
+
+.black-btn, %black-btn
+	background: #000
+	color: #fff
+	border: none
+	font-weight: 300
+	font-size: rem(14)
+	letter-spacing: .01em
+	display: inline-block
+	text-decoration: none
+	padding: 11px 16px 12px
+	border: 1px solid #000
+	transition: background .3s ease, color .3s ease
+
+	&:hover, &:focus
+
+
+	&--bordered
+		color: #000
+		background-color: transparent
+
+.close
+	background: url("../img/ico-close.svg") center no-repeat
+	border: none
+	padding: 0
+	display: block
+	+size(23px)
+
+.selectize
+	
+	&-control
+		padding: 0 !important
+		height: auto !important
+		min-height: 38px
+		display: flex
+		align-items: center
+
+		&.multi
+
+			.selectize
+
+				&-input
+
+					> div
+						background: $second-color
+
+	&-input
+		border: none
+		border-radius: 0
+		box-shadow: none !important
+		background: url("../img/ico-select-arrow.svg") center right 13px no-repeat, #fff
+		padding-right: 59px
+
+		&:after
+			display: none !important
+
+	&-dropdown
+		height: auto !important
+		padding: 0 !important
+		background: #fff !important
+
+.arrow-btn
+	display: inline-block
+	background: url("../img/ico-arrow-right.svg") center right 28px no-repeat, #000
+	color: #fff
+	text-decoration: none
+	text-transform: uppercase
+	font-weight: bold
+	font-size: rem(14)
+	letter-spacing: .01em
+	padding: 20px 64px 20px 33px
+	border: none
+
+.ajax-loading
+	position: relative
+
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		+size(100%)
+		background: url("../img/ico-loader.svg") center no-repeat, rgba(#fff, .5)
+		z-index: 10
+
+.bordered-link
+	color: inherit
+	text-decoration: none
+	border-bottom: 1px solid #a7a8a9
+	transition: border-color .3s ease
+	font-weight: 300
+	font-size: rem(30)
+	line-height: lh(36, 30)
+
+	&:hover, &:focus
+		border-color: $main-color
+
+.fancybox-navigation
+	// display: block !important
+
+.fancybox-thumbs
+	background: #edeef1
+
+	> ul
+
+		> li
+
+			&:before
+				border:
+					color: $main-color
+					width: 2px
