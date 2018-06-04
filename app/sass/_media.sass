@@ -1,3 +1,163 @@
 @import "bourbon"
 @import "vars"
 $output-bourbon-deprecation-warnings: false;
+
+@media screen and (max-width: 1100px)
+	.head
+		padding: 1.875rem 3.125rem 0 3rem
+
+	.evgeni
+
+		&__name
+
+			&:after
+				right: -20px !important
+
+	.page
+
+		&__img
+			margin-right: 2rem
+
+@media screen and (max-width: 1000px)
+	.html
+		font-size: 95%
+
+	.evgeni
+		
+		&__name, &__lastname
+			font-size: rem(50)
+
+		&__name
+			display: flex
+			align-items: center
+
+			&:after
+				position: static !important
+				display: inline-block
+				margin: -5px 0 0 15px
+
+	.rewards
+		flex-wrap: wrap
+		margin-bottom: -39px
+
+		&__one
+			width: 49%
+			margin-bottom: 39px
+
+	@supports (display: grid)
+		.rewards
+			margin: 0 !important
+			display: grid
+			grid-gap: rem(39) 20px
+			grid-template-columns: repeat(2, 1fr)
+
+			&__one
+				width: auto
+				margin: 0 !important
+
+	.reward
+		max-width: none
+
+		&__top
+			width: 77px
+			min-width: 0
+
+	.page-nav
+
+		&__year
+			font-size: rem(30)
+			width: 75px
+
+	.page
+
+		&__nav
+			margin-right: 2.375rem
+
+		&__content
+			position: relative
+
+		&__img
+			margin-right: 0
+			margin-bottom: 2rem
+
+		&__text
+
+			&-cont
+				flex-direction: column
+				align-items: center
+
+
+	.kubok
+
+		&__img
+			height: vh(450)
+
+			> img
+				width: 166px
+
+@media screen and (max-width: 660px)
+	.head
+		padding: 1rem 20px 0
+
+	.logo
+		font-size: rem(26)
+
+	.wrapper
+		padding: 0 20px
+
+	.lang
+
+		&__link
+			+size(40px)
+
+			&:not(:first-child)
+				margin-left: 10px
+
+	.page
+
+		&__nav
+			padding: 70px 0 0 !important
+			margin-right: 20px !important
+
+	.kubok__img
+
+		> img
+			width: 75px
+
+		&-bg
+			display: none
+
+	.page-nav
+
+		&__year
+			position: absolute
+			margin-right: 0
+			top: -85px
+			color: #fff !important
+			background: $main-color
+			border-radius: 6px
+			padding: 6px
+			left: 50%
+			width: auto
+			transform: translateX(-50%)
+
+	.evgeni
+
+		&__lastname, &__name
+			font-size: 2rem
+
+		&__rewards
+			margin: 1.7rem 0 0
+
+	.rewards
+		grid-gap: 0.4375rem 12px
+
+	.page
+
+		&__img
+			align-self: center
+
+		&__text
+
+			&-cont
+				align-items: stretch

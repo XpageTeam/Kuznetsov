@@ -7,9 +7,120 @@ html(lang="ru")
 		include inc/css.jade
 	body.main.loading
 		#page-wr
-			#content
-				include inc/header.jade
-				.content
-					
-			include inc/footer.jade
+			include inc/header.jade
+			main#content
+				section.page.page--first(data-anchor="page-1")
+					picture.page-bg
+						source(srcset="img/photos/main-bg.jpg" media="screen and (orientation: landscape)" data-main="")
+						source(srcset="img/photos/main-bg.jpg" media="screen and (orientation: portrait)")
+						img
+					.wrapper
+						.page__content
+							nav.page__nav
+								.page-nav
+									.page-nav__decor
+									.page-nav__year 2018
+									.page-nav__links
+										button.page-link.page-link--top
+										button.page-link.page-link--bot
+								figure.kubok__img
+									.kubok__img-bg
+										img(src="img/photos/kubok-bg.png")
+									img(src="img/photos/only-kubok.png")
+							.page__text
+								.evgeni
+									.evgeni__name(data-number="92") Евгений
+									.evgeni__lastname Кузнецов
+									.evgeni__team
+										a.btn(href="#" target="_blank") Washington Capitals
+									.evgeni__rewards
+										.rewards
+											.rewards__one
+												.reward
+													figure.reward__top
+														figcaption.reward__number 2
+														img(src="img/ico-gold.png")
+													.reward__bot-title Чемпионат мира
+											.rewards__one
+												.reward
+													figure.reward__top
+														figcaption.reward__number 2
+														img(src="img/ico-bronze.png")
+													.reward__bot-title Чемпионат мира
+											.rewards__one
+												.reward
+													figure.reward__top
+														figcaption.reward__number 2
+													.reward__bot-title Государственные награды
+											.rewards__one
+												.reward
+													figure.reward__top
+														figcaption.reward__number 2014
+													.reward__bot-title Вашингтон Кэпиталз
+				section.page(data-anchor="page-2")
+					.wrapper
+						.page__content
+							nav.page__nav
+								.page-nav
+									.page-nav__decor
+										.decor.decor--top
+										.decor.decor--bot
+									.page-nav__year 2014
+									.page-nav__links
+										button.page-link.page-link--top
+										button.page-link.page-link--bot
+							.page__text-cont
+								figure.page__img
+									img(src="img/photos/evgeny.jpg")
+								.page__text
+									.text-page
+										p После того как «Трактор» закончил выступление в сезоне 2013/2014 и не попал в плей-офф, 7 марта 2014 года Евгений Кузнецов расторг контракт с челябинским клубом, и уже на следующий день стал хоккеистом «Вашингтон Кэпиталз», подписав двухлетний контракт. Кузнецов выбрал 92 номер, под которым играл и в «Тракторе».
+				section.page(data-anchor="page-3")
+					.wrapper
+						.page__content
+							nav.page__nav
+								.page-nav
+									.page-nav__decor
+										.decor.decor--top
+										.decor.decor--bot
+									.page-nav__year 2012
+									.page-nav__links
+										button.page-link.page-link--top
+										button.page-link.page-link--bot
+							.page__text-cont
+								.page__text
+									.text-page
+										p На чемпионате мира 2012 в составе главной сборной провёл десять матчей, набрал 6 (2+4) очков и стал чемпионом мира. Евгений стал первым чемпионом мира в составе сборной России, родившимся не в Советском Союзе. На чемпионате мира 2014 со сборной России вновь стал чемпионом мира, провёл 10 матчей, набрал 2 (1+1) очка.
+				section.page(data-anchor="page-4")
+					.wrapper
+						.page__content
+							nav.page__nav
+								.page-nav
+									.page-nav__decor
+										.decor.decor--top
+										.decor.decor--bot
+									.page-nav__year 2011
+									.page-nav__links
+										button.page-link.page-link--top
+										button.page-link.page-link--bot
+							.page__text-cont
+								.page__text
+									.text-page
+										p В 2011 году сыграл на чемпионате мира среди молодёжных команд в Буффало (США) и стал чемпионом мира. <br /> Набрав в 7 играх 11 очков, он разделил второе-третье места среди бомбардиров с партнёром по команде Владимиром Тарасенко.
+				section.page(data-anchor="page-5")
+					.wrapper
+						.page__content
+							nav.page__nav
+								.page-nav
+									.page-nav__decor
+										.decor.decor--top
+										.decor.decor--bot
+									.page-nav__year 2010
+									.page-nav__links
+										button.page-link.page-link--top
+										button.page-link.page-link--bot
+							.page__text-cont
+								.page__text
+									.text-page
+										p Впервые сыграл за молодёжную сборную России на чемпионате мира молодёжных команд в 2010 году, которая заняла там шестое место. Был назван игроком матча во время игры группового этапа против сборной Австрии. Также дважды участвовал на юниорских чемпионатах мира и в 2009 году завоевал серебро.
 		include inc/scripts.jade
