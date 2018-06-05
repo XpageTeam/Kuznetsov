@@ -95,9 +95,66 @@ $output-bourbon-deprecation-warnings: false;
 			> img
 				width: 166px
 
-@media screen and (max-width: 660px)
+@media screen and (max-width: 750px) and (orientation: landscape)
+	
+	@supports (display: grid)
+		.evgeni
+			display: grid
+			grid-template-areas: "name team" "lastname team" "rewards rewards"
+
+			&__name
+				grid-area: name
+
+			&__lastname
+				grid-area: lastname
+
+			&__team
+				grid-area: team
+				margin: 0
+				align-self: center
+
+			&__rewards
+				grid-area: rewards
+
+	.rewards
+		display: flex
+		justify-content: space-between
+
+	.page
+
+		&--first
+			padding-top: 65px !important
+
+			.page
+
+				&-nav__year
+					left: 0
+					transform: none
+				
+				&__nav
+					margin: 0 !important
+
+	.evgeni
+
+		&__rewards
+			margin: .8rem 0 0 !important
+
+	.reward
+
+		&__top
+			padding-bottom: 0
+
+		&__bot-title
+			margin: 4px 0 0
+
+@media screen and (max-width: 660px), (max-width: 750px) and (orientation: landscape)
 	.head
-		padding: 1rem 20px 0
+		padding: 1rem 20px 1rem
+		z-index: 10
+		transition: background .3s ease
+		
+		&.js__scroll
+			background: #010e30
 
 	.logo
 		font-size: rem(26)
@@ -113,11 +170,57 @@ $output-bourbon-deprecation-warnings: false;
 			&:not(:first-child)
 				margin-left: 10px
 
+	.string
+		transform: none !important
+		opacity: 1
+
 	.page
+		height: auto !important
+
+		&__text
+			max-width: none
+
+		&:not(.page--first)
+			padding-top: 0 !important
+
+		&:not(:first-child)
+			margin: 3rem 0 0
+
+		&--first
+			padding-top: 100px !important
+
+			.page
+
+				&__nav
+					margin-top: 14.13632vh
+					opacity: 0
 
 		&__nav
 			padding: 70px 0 0 !important
 			margin-right: 20px !important
+
+		&__content
+			flex-direction: column
+			align-items: stretch
+
+	#content
+		padding-bottom: 2rem
+
+	.kubok__img
+		display: none
+
+	.page-nav
+
+		&__decor, &__links, &:after
+			display: none
+
+	.page-bg img
+		min-height: 70vh
+
+	.fp
+
+		&-tableCell
+			height: auto !important
 
 	.kubok__img
 
@@ -132,7 +235,7 @@ $output-bourbon-deprecation-warnings: false;
 		&__year
 			position: absolute
 			margin-right: 0
-			top: -85px
+			top: -65px
 			color: #fff !important
 			background: $main-color
 			border-radius: 6px
