@@ -24,9 +24,9 @@ html(lang="ru")
 										button.page-link.page-link--top
 										button.page-link.page-link--bot
 								figure.kubok__img
-									.kubok__img-bg
+									//- .kubok__img-bg
 										img(src="img/photos/kubok-bg.png")
-									img(src="img/photos/only-kubok.png")
+									img(src="img/photos/kubok-new.png")
 							.page__text
 								.evgeni
 									.evgeni__name(data-number="92") Евгений
@@ -34,29 +34,56 @@ html(lang="ru")
 									.evgeni__team
 										a.btn(href="#" target="_blank") Washington Capitals
 									.evgeni__rewards
-										.rewards
-											.rewards__one
-												.reward
-													figure.reward__top
-														figcaption.reward__number 2
-														img(src="img/ico-gold.png")
-													.reward__bot-title Чемпионат мира
-											.rewards__one
-												.reward
-													figure.reward__top
-														figcaption.reward__number 2
-														img(src="img/ico-bronze.png")
-													.reward__bot-title Чемпионат мира
-											.rewards__one
-												.reward
-													figure.reward__top
-														figcaption.reward__number 2
-													.reward__bot-title Государственные награды
-											.rewards__one
-												.reward
-													figure.reward__top
-														figcaption.reward__number 2014
-													.reward__bot-title Вашингтон Кэпиталз
+										.evgeni__rewards-internationl
+											.rewards__title Международные
+											.rewards__list
+												table
+													tbody
+														tr
+															td 2009
+															td 
+																img(src="img/ico-medal-silver.png")
+															td Среди юниорских команд
+														tr
+															td 2011
+															td 
+																img(src="img/ico-medal-gold.png")
+															td Среди молодёжных команд
+														tr
+															td 2012
+															td 
+																img(src="img/ico-medal-silver.png")
+															td Среди молодёжных команд
+														tr
+															td 2012, 2014
+															td 
+																img(src="img/ico-medal-gold.png")
+															td Чемпион мира
+														tr
+															td 2016, 2017
+															td 
+																img(src="img/ico-medal-bronze.png")
+															td Чемпионата мира
+										.evgeni__rewards-chl
+											.rewards__title КХЛ
+											.rewards__list
+												table
+													tbody
+														tr
+															td 2012
+															td 
+																img(src="img/ico-medal-kubok.png")
+															td Кубок Континента
+														tr
+															td 2012
+															td 
+																img(src="img/ico-medal-bronze.png")
+															td Чемпионата России/КХЛ
+														tr
+															td 2013
+															td 
+																img(src="img/ico-medal-silver.png")
+															td Чемпионата России/КХЛ
 				section.page(data-anchor="page-2")
 					.wrapper
 						.page__content

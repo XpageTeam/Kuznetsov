@@ -2,6 +2,10 @@
 @import "vars"
 $output-bourbon-deprecation-warnings: false;
 
+@media screen and (max-width: 1400px)
+	.page
+		padding-left: 50px
+
 @media screen and (max-width: 1100px)
 	.head
 		padding: 1.875rem 3.125rem 0 3rem
@@ -59,7 +63,7 @@ $output-bourbon-deprecation-warnings: false;
 		max-width: none
 
 		&__top
-			width: 77px
+			width: 68px
 			min-width: 0
 
 	.page-nav
@@ -69,6 +73,7 @@ $output-bourbon-deprecation-warnings: false;
 			width: 75px
 
 	.page
+		padding-left: 0
 
 		&__nav
 			margin-right: 2.375rem
@@ -85,15 +90,45 @@ $output-bourbon-deprecation-warnings: false;
 			&-cont
 				flex-direction: column
 				align-items: center
+	
+	.page-nav
 
+		&__links
+			// +size(45px)
+
+		&:after
+			// +size(60px)
+
+		&__year
+
+			&:after
+				right: auto
+				left: 0
+				padding-right: 0 !important
+				border:
+					right: none !important
+				text-align: left !important
 
 	.kubok
 
 		&__img
 			height: vh(450)
+			// display: none
 
 			> img
-				width: 166px
+				// width: 166px
+				height: 42vh
+				transform: translateX(1.6vh)
+
+	.evgeni
+
+		&__rewards
+			flex-direction: column
+
+			> div
+
+				&:not(:first-child)
+					margin: 2rem -0px 0
 
 @media screen and (max-width: 750px) and (orientation: landscape)
 	
@@ -197,7 +232,7 @@ $output-bourbon-deprecation-warnings: false;
 
 		&__nav
 			padding: 70px 0 0 !important
-			margin-right: 20px !important
+			margin-right: 0 !important
 
 		&__content
 			flex-direction: column
@@ -245,15 +280,30 @@ $output-bourbon-deprecation-warnings: false;
 			transform: translateX(-50%)
 
 	.evgeni
+		display: flex
+		align-items: center
+		flex-direction: column
 
 		&__lastname, &__name
 			font-size: 2rem
+			width: 220px
 
 		&__rewards
-			margin: 1.7rem 0 0
+			margin: 3rem 0 0
+			align-self: stretch
+
+		&__name
+
+			&:after
+				font-size: rem(20) !important
+				padding: 5px 7px !important
 
 	.rewards
-		grid-gap: 0.4375rem 12px
+		grid-gap: 2rem 12px
+		justify-items: center
+
+	.reward
+		width: 100px
 
 	.page
 

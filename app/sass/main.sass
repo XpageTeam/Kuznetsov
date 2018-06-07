@@ -261,7 +261,9 @@ button, input, select
 		max-width: none
 		// transform: translateX(-4.62428vw)
 		// left: vw(-88)
-		max-height: vh(470)
+		max-height: 87vh
+		transform: translateX(3vh)
+		pointer-events: none
 		position: relative
 		z-index: 2
 
@@ -310,6 +312,20 @@ button, input, select
 
 			&__year
 				color: $main-color
+				position: relative
+
+				&:after
+					content: "Обладатель Кубка Стенли"
+					position: absolute
+					text-align: right
+					font-size: rem(18)
+					right: 18px
+					top: calc(100% + 23px)
+					padding-right: 18px
+					border-right: 6px solid $main-color
+					color: #fff
+					font-weight: 300
+					width: 170px
 
 			&__decor
 				// top: calc(-21vh - 9px)
@@ -323,6 +339,10 @@ button, input, select
 			padding: 80px 0 0
 			position: relative
 
+		&__text
+			// padding-right: 2.1rem
+			max-width: 645px
+
 	.wrapper
 		height: 100%
 
@@ -334,8 +354,10 @@ button, input, select
 		letter-spacing: .05em
 		text-transform: uppercase
 		line-height: 1
+		display: inline-block
 
 	&__name
+		padding-right: 3.7rem
 		
 		&[data-number]
 			position: relative
@@ -357,37 +379,92 @@ button, input, select
 		margin: rem(35) 0 0
 
 	&__rewards
-		margin: rem(122) 0 0
+		margin: rem(75) 0 0
+		display: flex
+
+		> div
+			flex: 1 1 auto
+			
+			&:not(:first-child)
+				margin-left: vw(80)
+
+		&-chl
+
+			table
+
+				td
+
+					&:first-child
+						padding-right: rem(25)
+
+					&:nth-child(2)
+						padding-right: rem(18)
 
 .rewards
-	display: flex
-	justify-content: space-between
 
-.reward
-	display: flex
-	flex-direction: column
-	align-items: flex-start
-	max-width: 77px
-
-	&__top
-		display: flex
-		align-items: center
+	&__title
 		border-bottom: 1px solid $main-color
-		padding-bottom: 17px
-		padding-right: 7px
-		min-width: 100%
+		font-size: rem(18)
+		letter-spacing: .01em
+		line-height: lh(21, 18)
+		padding-bottom: 16px
+		margin-bottom: 25px
+
+	&__list
+
+		table
+			white-space: nowrap
+			font-size: rem(14)
+
+		tr
+
+			&:not(:first-child)
+
+				td
+					padding: 
+						top: 22px
+						// b
+
+		td
+			vertical-align: middle
+
+			&:first-child
+				padding-right: 2rem
+
+			&:nth-child(2)
+				// width: 24px
+				text-align: center
+				padding-right: rem(12)
+
+		img
+			display: block
+
+// .reward
+// 	display: flex
+// 	flex-direction: column
+// 	align-items: flex-start
+// 	max-width: 77px
+
+// 	&__top
+// 		display: flex
+// 		align-items: center
+// 		border-bottom: 1px solid $main-color
+// 		padding-bottom: 17px
+// 		padding-right: 7px
+// 		min-width: 100%
+// 		line-height: 1
 	
-	&__number
-		font-size: rem(30)
-		letter-spacing: .05em
+// 	&__number
+// 		font-size: rem(30)
+// 		letter-spacing: .05em
 
-		&:not(:last-child)
-			margin-right: 14px
+// 		&:not(:last-child)
+// 			margin-right: 14px
 
-	&__bot-title
-		margin: 17px 0 0
-		font-size: rem(14)
-		line-height: lh(20, 14)
-		color: rgba(#fff, .4)
+// 	&__bot-title
+// 		margin: 17px 0 0
+// 		font-size: rem(14)
+// 		line-height: lh(20, 14)
+// 		color: rgba(#fff, .4)
 
 @import "media"

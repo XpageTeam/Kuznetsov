@@ -23,15 +23,15 @@ xpager_conn = ftp.create({
 	log: gutil.log
 });
 
-const templatePath = "/htdocs/local/templates/main/";
+const templatePath = "/www/kuznecov92.ru/";
 const remotePathCss = templatePath+"css",
 	remotePathJs = templatePath+"js",
 	remotePathImg = templatePath+"img";
 
 const server_conn = ftp.create({
-	host:      '',
-	user:      '',
-	password:  '',
+	host:      '46.161.37.220',
+	user:      'kuznecov',
+	password:  '0C1j2U3b',
 	parallel: 4,
 	log: gutil.log
 });
