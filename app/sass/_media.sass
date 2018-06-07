@@ -2,6 +2,10 @@
 @import "vars"
 $output-bourbon-deprecation-warnings: false;
 
+@media screen and (min-width: 660px), (min-width: 750px) and (orientation: partrait)
+	.evgeni__best-reward
+		display: none
+
 @media screen and (max-width: 1400px)
 	.page
 		padding-left: 50px
@@ -182,6 +186,12 @@ $output-bourbon-deprecation-warnings: false;
 		&__bot-title
 			margin: 4px 0 0
 
+	.evgeni__best-reward
+		display: block
+
+		img
+			max-width: 120px
+
 @media screen and (max-width: 660px), (max-width: 750px) and (orientation: landscape)
 	.head
 		padding: 1rem 20px 1rem
@@ -190,6 +200,61 @@ $output-bourbon-deprecation-warnings: false;
 		
 		&.js__scroll
 			background: #010e30
+
+	.evgeni
+
+		&__team
+			display: none
+
+		&__best-reward
+			margin: 2rem -0px 0
+
+	.best-reward
+		text-align: center
+		
+		&__year
+			margin: 2rem -0px 0
+			font-weight: bold
+			font-size: rem(32)
+			color: $main-color
+			display: none
+
+		&__text
+			font-size: rem(20)
+			margin: 2rem -0px 0
+			font-weight: bold
+			text-transform: uppercase
+			letter-spacing: .01em
+
+		&__img
+			margin: 1rem -0px 0
+
+	@supports (display: grid)
+		.best-reward
+			text-align: left
+			display: grid
+			grid-gap: 1rem 0
+			grid-template-areas: "team img" "year img" "text img"
+			grid-template-areas: "team img" "text img"
+			
+			&__year
+				// display: block
+				grid-area: year
+
+			&__team
+				grid-area: team
+
+			&__text
+				grid-area: text
+
+			&__img
+				grid-area: img
+				display: flex
+				justify-content: center
+				align-items: center
+
+			> div, > figure
+				margin: 0
 
 	.logo
 		font-size: rem(26)
@@ -213,7 +278,7 @@ $output-bourbon-deprecation-warnings: false;
 		height: auto !important
 
 		&__text
-			max-width: none
+			max-width: none !important
 
 		&:not(.page--first)
 			padding-top: 0 !important
