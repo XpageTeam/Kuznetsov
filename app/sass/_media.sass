@@ -2,6 +2,15 @@
 @import "vars"
 $output-bourbon-deprecation-warnings: false;
 
+@media screen and (min-width: 2000px)
+	html
+		font-size: 131%
+
+	.page-nav
+
+		&__year
+			width: 140px
+
 @media screen and (min-width: 660px), (min-width: 750px) and (orientation: partrait)
 	.evgeni__best-reward
 		display: none
@@ -121,8 +130,8 @@ $output-bourbon-deprecation-warnings: false;
 
 			> img
 				// width: 166px
-				height: 42vh
-				transform: translateX(1.6vh)
+				// height: 42vh
+				// transform: translateX(1.6vh)
 
 	.evgeni
 
