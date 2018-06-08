@@ -15,12 +15,14 @@ $(e => {
 			$this.find("img")[0].src = imgSrc;
 		});
 
+	var fp = false;
+
 	if (!is.mobile()){
-		$('#content').fullpage({
+		fp = $('#content').fullpage({
 			//Навигация
 			menu: '#menu',
 			lockAnchors: false,
-			anchors:['page-1', 'page-2', "page-3", "page-4", "page-5"],
+			anchors:['page-1', 'page-2', "page-3", "page-4", "page-5", "page-6", "page-7"],
 			navigation: false,
 			navigationPosition: 'right',
 			navigationTooltips: ['firstSlide', 'secondSlide'],
@@ -104,6 +106,15 @@ $(e => {
 			})
 		});
 	}
+
+	$(".logo").click(e => {
+		if (typeof(fp) == "undefined")
+			$.fn.fullpage.moveTo("page-1", 0)
+		else
+			$("html, body").animate({
+				scrollTop: 0
+			}, 300)
+	});
 });
 
 
